@@ -178,7 +178,7 @@ exports.forgotPassword = async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${req.protocol}://localhost:3000/resetpassword/${resetToken}`;
+  const resetURL = `https://mern-shopping-ui.herokuapp.com/resetpassword/${resetToken}`;
 
   try {
     await new Email(user, resetURL).changeForgotPassword();
