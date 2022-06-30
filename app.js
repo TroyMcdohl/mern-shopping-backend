@@ -32,7 +32,10 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3500"],
+    origin: [
+      "https://mern-shopping-ui.herokuapp.com/",
+      "https://mern-shopping-adminpanel.herokuapp.com/",
+    ],
     credentials: true,
   })
 );
@@ -62,6 +65,6 @@ app.use("*", (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log("Server is running!");
 });
