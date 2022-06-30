@@ -67,6 +67,9 @@ exports.login = async (req, res, next) => {
     res.cookie("jwt", token, {
       httpOnly: true,
       expires: new Date(Date.now() + 24 * 3600 * 1000),
+
+      sameSite: "none",
+      secure: true,
     });
 
     const { password, ...otherDetail } = user._doc;
