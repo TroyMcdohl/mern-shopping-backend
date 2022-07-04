@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://effervescent-dieffenbachia-7523b6.netlify.app",
+      "https://mern-shopping-ui.herokuapp.app",
       "https://mern-shopping-adminpanel.herokuapp.com",
     ],
     credentials: true,
