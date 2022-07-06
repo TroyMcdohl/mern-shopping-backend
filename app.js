@@ -23,8 +23,6 @@ mongoose
     console.log(err);
   });
 
-app.enable("trust proxy");
-
 app.set("views", path.join("./views"));
 app.set("view engine", "pug");
 
