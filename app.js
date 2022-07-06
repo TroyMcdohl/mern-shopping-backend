@@ -68,10 +68,3 @@ app.use(globalErrorHandler);
 app.listen(process.env.PORT || 8000, () => {
   console.log("Server is running!");
 });
-
-process.on("SIGTERM", () => {
-  console.log("SIGTERM RECEIVED.Shutting down gracefully");
-  server.close(() => {
-    console.log("Process terminated");
-  });
-});
