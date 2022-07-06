@@ -8,7 +8,7 @@ router.route("/userstats").get(authController.userStats);
 
 router.route("/login").post(authController.login);
 router.route("/signup").post(authController.signup);
-router.route("/logout").patch(authController.protect, authController.logout);
+router.route("/logout").patch(authController.logout);
 
 router
   .route("/updateme")
