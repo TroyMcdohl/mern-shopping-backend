@@ -23,6 +23,8 @@ mongoose
     console.log(err);
   });
 
+app.enable("trust proxy");
+
 app.set("views", path.join("./views"));
 app.set("view engine", "pug");
 
@@ -67,4 +69,11 @@ app.use(globalErrorHandler);
 
 app.listen(process.env.PORT || 8000, () => {
   console.log("Server is running!");
+});
+
+process.on("SIGTERM", () => {
+  console.log("SIGTERM RECEIVED.Shutting down gracefully");
+  server.close(() => {
+    console.log("Process terminated");
+  });
 });

@@ -69,7 +69,7 @@ exports.login = async (req, res, next) => {
       expires: new Date(Date.now() + 24 * 3600 * 1000),
 
       sameSite: "none",
-      secure: true,
+      secure: req.secure || req.headers("x-forwared-proto") === https,
     });
 
     const { password, ...otherDetail } = user._doc;
