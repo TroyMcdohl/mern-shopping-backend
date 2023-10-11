@@ -32,10 +32,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: [
-      "https://mern-shopping-ui.herokuapp.com",
-      "https://mern-shopping-adminpanel.herokuapp.com",
-    ],
+    origin: ["http://localhost:3500", "http://localhost:3000"],
     credentials: true,
   })
 );
